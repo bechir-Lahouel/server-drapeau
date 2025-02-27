@@ -38,7 +38,7 @@ io.on('connection', (socket) => {
             console.log("La partie a commencé!");
             
             // Envoi du message MQTT
-            mqttClient.publish('game/status', 'Game Started');
+            mqttClient.publish('captureTheFlag/gameCommands', 'Game Started');
 
             gameTimer = setTimeout(() => {
                 gameActive = false;
@@ -46,7 +46,7 @@ io.on('connection', (socket) => {
                 console.log("La partie est terminée!");
                 
                 // Envoi du message MQTT
-                mqttClient.publish('game/status', 'Game Over');
+                mqttClient.publish('captureTheFlag/gameCommands', 'Game Over');
             }, 30000); // 30 secondes
         }
     });
