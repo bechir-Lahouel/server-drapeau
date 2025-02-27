@@ -37,6 +37,22 @@ socket.on('score_update', (scores) => {
     document.getElementById("score_blue").innerText = `Bleu: ${scores.blue}s`;
 });
 
+function startGame() {
+    socket.emit('start_game');
+}
+
+// Écoute le début de la partie
+socket.on('game_started', (data) => {
+    document.getElementById("game_status").innerText = data.message;
+    console.log(data.message);
+});
+
+// Écoute la fin de la partie
+socket.on('game_over', (data) => {
+    document.getElementById("game_status").innerText = data.message;
+    console.log(data.message, data.scores);
+});
+
 
 // Afficher le gagnant
 socket.on('game_result', (result) => {
