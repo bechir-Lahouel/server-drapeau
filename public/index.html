@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test du jeu de drapeau</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Jeu de Capture de Drapeaux</h1>
+    <button onclick="captureFlag('red')">Capturer pour Rouge</button>
+    <button onclick="releaseFlag()">Relâcher Drapeau</button>
+    <button onclick="captureFlag('blue')">Capturer pour Bleu</button>
+    <button onclick="getWinner()">Afficher Gagnant</button>
+    <h2 id="result">Résultat : </h2>
+    <h3>Scores :</h3>
+    <p id="score_red">Rouge: 0s</p>
+    <p id="score_blue">Bleu: 0s</p>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
